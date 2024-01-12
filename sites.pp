@@ -56,7 +56,7 @@ node slave2.puppet{
 }
 
 node default {
-  file { '/home/vagrant' :
+  file { '/home/vagrant/empty.txt' :
       ensure => file,
       content 'Hello world'
   }
