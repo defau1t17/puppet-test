@@ -1,8 +1,8 @@
 node slave1.puppet{
-  file { '/var/www/static' :
+  file { '/var/static' :
      ensure => 'directory',
   }
-  file { '/var/www/static/index.html':
+  file { '/var/static/index.html':
       ensure => file,
       content => '<html>
                     <head>
@@ -13,19 +13,19 @@ node slave1.puppet{
                     </body>
                   </html>',
     }
-  file { '/etc/nginx/sites-enabled/static.com':
+  file { '/etc/nginx/conf.d/static.conf':
       ensure => file,
       content => 'server {  
                   listen 80;
                   server_name 192.168.56.11;
-                  root /var/www/static;
+                  root /var/static;
                   index index.html;
                 }',
     }
 }
 
 node slave2.puppet{
-  file { '/var/www/dymanic' :
+  file { '/var/dymanic' :
      ensure => 'directory',
   }
   file { '/var/www/dymanic/index.php':
@@ -44,21 +44,15 @@ node slave2.puppet{
                   </body>
               </html>',
     }
-  file { '/etc/nginx/sites-enabled/dynamic.com':
+  file { '/etc/nginx/conf.d/dynamic.conf':
       ensure => file,
       content => 'server {  
                   listen 80;
                   server_name 192.168.56.12;
-                  root /var/www/dymanic;
+                  root /var/dymanic;
                   index index.php;
                 }',
     }
 }
 
-node default {
-  file { '/home/vagrant/empty.txt' :
-      ensure => file,
-      content 'Hello world'
-  }
-}
 
