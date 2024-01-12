@@ -28,7 +28,7 @@ node slave2.puppet{
   file { '/var/dymanic' :
      ensure => 'directory',
   }
-  file { '/var/www/dymanic/index.php':
+  file { '/var/dymanic/index.php':
       ensure => file,
       content => '<html>
                     <head>
