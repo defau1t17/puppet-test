@@ -1,8 +1,5 @@
 node slave1.puppet{
-  file { '/var/static' :
-     ensure => 'directory',
-  }
-  file { '/var/static/index.html':
+  file { '/usr/share/nginx/html/index.html':
       ensure => file,
       content => '<html>
                     <head>
@@ -13,22 +10,10 @@ node slave1.puppet{
                     </body>
                   </html>',
     }
-  file { '/etc/nginx/conf.d/static.conf':
-      ensure => file,
-      content => 'server {  
-                  listen 80;
-                  server_name 192.168.56.11;
-                  root /var/static;
-                  index index.html;
-                }',
-    }
 }
 
 node slave2.puppet{
-  file { '/var/dymanic' :
-     ensure => 'directory',
-  }
-  file { '/var/dymanic/index.php':
+  file { '/usr/share/nginx/html/index.php':
       ensure => file,
       content => '<html>
                     <head>
@@ -43,15 +28,6 @@ node slave2.puppet{
                     ?>
                   </body>
               </html>',
-    }
-  file { '/etc/nginx/conf.d/dynamic.conf':
-      ensure => file,
-      content => 'server {  
-                  listen 80;
-                  server_name 192.168.56.12;
-                  root /var/dymanic;
-                  index index.php;
-                }',
     }
 }
 
