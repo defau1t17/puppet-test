@@ -6,6 +6,6 @@ node slave1.puppet{
     include role::slave1
 }
 
-node slave1.puppet{
+node slave2.puppet{
     include role::slave2
 }
