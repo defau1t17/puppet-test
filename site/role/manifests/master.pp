@@ -1,3 +1,3 @@
 class role::master {
-    include profile::mainserver::reverseproxy
+    include profile::mainserver::nginx-reverse-proxy
 }
