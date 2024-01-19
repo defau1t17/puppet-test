@@ -10,6 +10,6 @@ class profile::slave2::dynamic {
 
    file { '/etc/nginx/conf.d/dynamic.conf' : 
         ensure => file,
-        source => 'puppet:///modules/nginx/dynamic.conf'
+        source => 'puppet:///modules/apache/dynamic.conf'
     }
 }
