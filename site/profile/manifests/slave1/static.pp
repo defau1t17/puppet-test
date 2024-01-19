@@ -4,7 +4,7 @@ class profile::slave1::static {
         source => 'puppet:///modules/apache/index.html'
     }
 
-   file { '/etc/html/conf.d/static.conf' :
+   file { '/etc/httpd/conf.d/static.conf' :
         ensure => file,
         source => 'puppet:///modules/apache/static.conf'
     }
