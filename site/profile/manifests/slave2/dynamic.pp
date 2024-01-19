@@ -8,7 +8,7 @@ class profile::slave2::dynamic {
         source => 'puppet:///modules/apache/index.php'
     }
 
-   file { '/etc/nginx/conf.d/dynamic.conf' : 
+   file { '/etc/httpd/conf.d/dynamic.conf' : 
         ensure => file,
         source => 'puppet:///modules/apache/dynamic.conf'
     }
