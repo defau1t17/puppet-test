@@ -1,4 +1,4 @@
-class profile::slave2::dynamic-content {
+class profile::slave2::dynamiccontent {
     file { '/usr/share/nginx/html' :
         ensure => file,
         source => 'puppet:///modules/files/dynamic.php'

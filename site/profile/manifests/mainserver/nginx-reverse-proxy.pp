@@ -1,5 +1,6 @@
-class profile::mainserver::nginx-reverse-proxy {
+class profile::mainserver::reverseproxy {
     file { '/etc/nginx/conf.d': 
-        source => puppet:///modules/files/reverseproxy.conf
+        ensure => file,
+        source => 'puppet:///modules/files/reverseproxy.conf'
     }
 }
