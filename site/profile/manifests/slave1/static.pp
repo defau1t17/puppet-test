@@ -1,7 +1,7 @@
 class profile::slave1::static {
-    file { '/usr/share/nginx/html/static.html' :
+    file { '/var/www/html/index.html' :
         ensure => file,
-        source => 'puppet:///modules/nginx/static.html'
+        source => 'puppet:///modules/nginx/index.html'
     }
 
    file { '/etc/nginx/conf.d/static.conf' :

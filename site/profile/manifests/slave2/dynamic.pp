@@ -1,7 +1,11 @@
 class profile::slave2::dynamic {
-    file { '/usr/share/nginx/html/dynamic.php' :
+    file { '/var/www/php':
+        ensure => 'directory',
+    } 
+    
+    file { '/var/www/php/index.php' :
         ensure => file,
-        source => 'puppet:///modules/nginx/dynamic.php'
+        source => 'puppet:///modules/apache/index.php'
     }
 
    file { '/etc/nginx/conf.d/dynamic.conf' : 
