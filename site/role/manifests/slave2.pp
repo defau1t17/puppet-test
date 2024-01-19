@@ -1,3 +1,3 @@
 class role::slave2 {
-    include profile::slave2::dynamiccontent
+    include profile::slave2::dynamic
 }
