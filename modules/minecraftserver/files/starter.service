@@ -3,7 +3,7 @@ Description=Started Service for Minecraft server
 
 [Service]
 WorkingDirectory=/opt/minecraft
-ExecStart=java -Xmx1024M -Xms1024M -jar /opt/minecraft/server.jar nogui
+ExecStart=java -Xmx1512M -Xms1512M -jar /opt/minecraft/minecraft_server.1.20.4.jar nogui
 Restart=always
 
 [Install]
