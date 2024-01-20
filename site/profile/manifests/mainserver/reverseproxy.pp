@@ -3,7 +3,6 @@ class profile::mainserver::reverseproxy {
     package{ 'nginx' :
         ensure => installed,
     }
-  
 
     file { '/etc/nginx/conf.d/reverseproxy.conf': 
         ensure => file,
