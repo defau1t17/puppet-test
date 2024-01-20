@@ -19,7 +19,7 @@ class minecraftserver {
         ensure => present,
     }
     
-    file{ '/etc/systemd/system/starter.service'
+    file{ '/etc/systemd/system/starter.service' :
         ensure => 'file',
         source => 'puppet:///modeles/minecraftserver/starter.service',
     }
