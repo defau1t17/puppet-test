@@ -1,11 +1,10 @@
 class profile::miniserver::minecraftpackege {
     
-    include wget
-    wget::fetch { 'download minecraft server' :
+    
+     remote_file { 'Download minecraft server':
         source => 'https://piston-data.mojang.com/v1/objects/8dd1a28015f51b1803213892b50b7b4fc76e594d/server.jar',
-        destination => '/opt/minecraft/',
-        timeout => 0,
-        verbose => true
+        path   => '/opt/minecraft/server.jar,
+        ensure => present,
     }
 
     file { '/opt/minecraft/server.jar' :

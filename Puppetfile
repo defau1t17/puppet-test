@@ -1,1 +1,1 @@
-mod 'puppet-wget', '2.0.1'
+mod 'lwf-remote_file', '1.1.3'
