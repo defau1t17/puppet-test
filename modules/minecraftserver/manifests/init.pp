@@ -18,7 +18,7 @@ class minecraftserver {
 
     file{ '/etc/systemd/system/starter.service' :
         ensure => 'file',
-        source => 'puppet:///modeles/minecraftserver/starter.service',
+        source => 'puppet:///modules/minecraftserver/starter.service',
     }
 
     service { 'starter.service' :
