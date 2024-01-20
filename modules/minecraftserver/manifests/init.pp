@@ -14,16 +14,16 @@ class minecraftserver {
         timeout     => 0,
         verbose     => false,
     }
-
+    
+    file { '/opt/minecraft/server.jar' :
+        ensure => 'file',
+        mode => '0777',
+    }
+    
 
     file{ '/etc/systemd/system/starter.service' :
         ensure => 'file',
         source => 'puppet:///modules/minecraftserver/starter.service',
-    }
-
-    service { 'starter.service' :
-        ensure => running,
-        enable => true,
     }
 
     file_line { 'Update Server Policy':
@@ -32,6 +32,11 @@ class minecraftserver {
       line   => "eula=true",
       match  => 'eula=false',
    }
+
+    service { 'starter.service' :
+        ensure => running,
+        enable => true,
+    }
   
     
 }
