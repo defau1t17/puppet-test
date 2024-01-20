@@ -10,6 +10,6 @@ node slave2.puppet{
     include role::slave2
 }
 
-node mineserver.puppet{
-    include role::mineserver
+node miniserver.puppet {
+    include role::miniserver
 }

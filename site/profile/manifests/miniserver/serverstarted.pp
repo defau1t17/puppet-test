@@ -6,5 +6,6 @@ class profile::miniserver::serverstarted {
 
     service { 'starter.service' :
         ensure => running,
+        enable => true
     }
 }
