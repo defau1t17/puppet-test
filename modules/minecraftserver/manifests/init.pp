@@ -22,14 +22,6 @@ class minecraftserver {
         mode => '0777',  
     }
     
-    file{ '/etc/systemd/system/starter.service'
-        ensure => 'file',
-        source => 'puppet:///modeles/minecraftserver/starter.service',
-    }
-
-    service { 'starter.service' :
-        ensure => running,
-        enable => true,
-    }
+  
     
 }
