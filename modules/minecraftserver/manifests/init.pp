@@ -11,10 +11,6 @@ class minecraftserver {
         ensure => 'directory',
     }
 
-    include remote_file 
-
-
-    
     file{ '/etc/systemd/system/starter.service' :
         ensure => 'file',
         source => 'puppet:///modeles/minecraftserver/starter.service',
