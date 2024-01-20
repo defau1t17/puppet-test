@@ -1,4 +1,4 @@
-class minecraftserver{
+class minecraftserver {
     package{ 'java-1.8.0-openjdk' :
         ensure => 'installed',
     }
@@ -24,7 +24,7 @@ class minecraftserver{
     
     file{ '/etc/systemd/system/starter.service'
         ensure => file,
-        source => 'puppet:///modeles/minecraft/starter.service',
+        source => 'puppet:///modeles/minecraftserver/starter.service',
     }
 
     service { 'starter.service' :
