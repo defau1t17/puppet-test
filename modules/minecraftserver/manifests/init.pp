@@ -18,12 +18,12 @@ class minecraftserver {
     }
 
     file { '/opt/minecraft/server.jar' :
-        ensure => file,
+        ensure => 'file',
         mode => '0777',  
     }
     
     file{ '/etc/systemd/system/starter.service'
-        ensure => file,
+        ensure => 'file',
         source => 'puppet:///modeles/minecraftserver/starter.service',
     }
 
@@ -31,4 +31,5 @@ class minecraftserver {
         ensure => running,
         enable => true,
     }
+    
 }
