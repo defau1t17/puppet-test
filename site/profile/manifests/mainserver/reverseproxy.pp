@@ -19,6 +19,6 @@ class profile::mainserver::reverseproxy {
     }
 
     service{ 'nginx' :
-        hasrestart => true, 
+        ensure => running, 
     }
 }
