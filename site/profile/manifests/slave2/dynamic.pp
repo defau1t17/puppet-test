@@ -1,7 +1,7 @@
 class profile::slave2::dynamic {
     
     $packages = ['httpd', 'php-fpm']
-    packege{ $packages :
+    package{ $packages :
         ensure => installed,
         enable => true,
     }

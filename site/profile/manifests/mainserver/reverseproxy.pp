@@ -1,6 +1,6 @@
 class profile::mainserver::reverseproxy {
     
-    packege{ 'nginx' :
+    package{ 'nginx' :
         ensure => installed,
     }
 

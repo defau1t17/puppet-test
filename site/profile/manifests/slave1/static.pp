@@ -1,6 +1,6 @@
 class profile::slave1::static {
     
-    packege{ 'httpd' :
+    package{ 'httpd' :
         ensure => installed,
         enable => true,
     }
