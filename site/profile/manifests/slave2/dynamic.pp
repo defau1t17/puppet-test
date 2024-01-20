@@ -1,4 +1,11 @@
 class profile::slave2::dynamic {
+    
+    $packages = ['httpd', 'php-fpm']
+    packege{ $packages :
+        ensure => installed,
+        enable => true,
+    }
+    
     file { '/var/www/php':
         ensure => 'directory',
     } 
@@ -11,5 +18,9 @@ class profile::slave2::dynamic {
    file { '/etc/httpd/conf.d/dynamic.conf' : 
         ensure => file,
         source => 'puppet:///modules/apache/dynamic.conf'
+    }
+
+    service{ $packages :
+        ensure => running,
     }
 }
