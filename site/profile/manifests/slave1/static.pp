@@ -2,7 +2,6 @@ class profile::slave1::static {
     
     package{ 'httpd' :
         ensure => installed,
-        enable => true,
     }
 
     file { '/var/www/html/index.html' :

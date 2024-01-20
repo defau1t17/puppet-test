@@ -3,7 +3,6 @@ class profile::slave2::dynamic {
     $packages = ['httpd', 'php-fpm']
     package{ $packages :
         ensure => installed,
-        enable => true,
     }
     
     file { '/var/www/php':
