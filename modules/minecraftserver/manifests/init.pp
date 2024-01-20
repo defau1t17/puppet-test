@@ -1,9 +1,5 @@
 class minecraftserver {
-    package{ 'java-1.8.0-openjdk' :
-        ensure => 'installed',
-    }
-
-    package { 'screen':
+    package{ 'openjdk-17-jdk-headless' :
         ensure => 'installed',
     }
 
