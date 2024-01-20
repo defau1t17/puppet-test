@@ -8,12 +8,15 @@ class profile::mainserver::reverseproxy {
         ensure => running, 
     }
 
+    exec {'include proxy' : 
+        command => 'setsebool httpd_can_network_connect on',
+    }
+    
+    
     file { '/etc/nginx/conf.d/reverseproxy.conf': 
         ensure => file,
         source => 'puppet:///modules/apache/reverseproxy.conf'
     }
 
-    service{ 'nginx' :
-        ensure => running, 
-    }
+    
 }
