@@ -1,7 +1,7 @@
 class profile::mainserver::reverseconfig {
     
-    selinux::module { 'disable selinux' :
-        mode => 'disabled'
+    class { selinux:
+       mode => 'disabled',
     }
 
 }
